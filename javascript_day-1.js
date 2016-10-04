@@ -34,3 +34,41 @@ if(myBoolVar){
 //cocatenate string with more value
 myStringVar += '_Open Source Developer';
 
+/*
+	2. Write a program that uses at least three ways to create an object variable,array variable
+*/
+	//Object Variables
+		//Using object literal
+		var myNewObject1 = { name : 'Aaditya Agrawal', designation : 'Sr Software Developer', goal : 'Learn to enhance/update technical skills and earn while learning'};
+
+		//Usign keyword "new"
+		var myNewObject2 = new object();
+		myNewObject2.name = 'Aaditya Agrawal';
+		myNewObject2.designation = 'Sr Software Developer';
+		myNewObject2.goal = 'Learn to enhance/update technical skills and earn while learning';
+
+		//Using Object Constructor
+		function myNewObject3(name, designation, goal) {
+			this.name = name;
+			this.designation = designation;
+			this.goal = goal;
+		}
+		var myNewObject3 = new myNewObject3('Aaditya Agrawal', 'Sr Software Developer', 'Learn to enahance/update technical skills and earn while learning');
+
+		//using prototype way
+		myNewObject3.prototype.empcode = 'Cue307';
+		var myNewObject3 =  Object.create(myNewObject3.prototype);//instantiate object using the constructor function
+
+	//Array Varaibles
+		//Using keyward new
+		var myArrayVar = new Array('hi', 123, 'bye');
+
+		//declare n then define
+		var myArrayVar = new Array();
+		myArrayVar[0] = 'here';
+		myArrayVar[1] ='added value';
+
+		//using array literal
+		var myArrayVar = ['hello', 2, 'javascript'];
+
+

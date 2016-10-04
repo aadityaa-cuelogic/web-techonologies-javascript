@@ -34,7 +34,48 @@
     		<button id="concatStrValue" onclick="concatStrValue()">Contact String with Value</button>
     	</div>
     </p>
-    
+    <p>
+    	<br><br>
+    	<h4>2. Write a program that uses at least three ways to create an object variable,array variable</h4>
+    	<div>
+    		<h6>Object Variables</h6>
+    		<br>"//Using object literal<br>
+		var myNewObject1 = { name : 'Aaditya Agrawal', designation : 'Sr Software Developer', goal : 'Learn to enhance/update technical skills and earn while learning'};"
+			<br><br>
+			"//Usign keyword new<br>
+			var myNewObject2 = new object();<br>
+			myNewObject2.name = 'Aaditya Agrawal';<br>
+			myNewObject2.designation = 'Sr Software Developer';<br>
+			myNewObject2.goal = 'Learn to enhance/update technical skills and earn while learning';<br>
+
+			//Using Object Constructor<br>
+			function myNewObject3(name, designation, goal) {<br>
+				this.name = name;<br>
+				this.designation = designation;<br>
+				this.goal = goal;<br>
+			}<br>
+			var myNewObject3 = new myNewObject3('Aaditya Agrawal', 'Sr Software Developer', 'Learn to enahance/update technical skills and earn while learning');<br>
+
+			//using prototype way<br>
+			myNewObject3.prototype.empcode = 'Cue307';<br>
+			var myNewObject3 =  Object.create(myNewObject3.prototype);//instantiate object using the constructor function
+			<br>
+			<br>
+
+			<h6>Array Variables</h6>
+			//Array Varaibles<br>
+			//Using keyward new<br>
+			var myArrayVar = new Array('hi', 123, 'bye');<br>
+
+			//declare n then define<br>
+			var myArrayVar = new Array();<br>
+			myArrayVar[0] = 'here';<br>
+			myArrayVar[1] ='added value';<br>
+
+			//using array literal<br>
+			var myArrayVar = ['hello', 2, 'javascript'];<br>"
+    	</div>
+    </p>
     <script type="text/javascript">
     	/*
 		1. Write a program to create variables of the following types:
@@ -92,6 +133,29 @@
 		}	
 
 		//======================================================================================================
+
+		/*
+			2. Write a program that uses at least three ways to create an object variable,array variable
+		*/
+		//Using object literal
+		var myNewObject1 = { name : 'Aaditya Agrawal', designation : 'Sr Software Developer', goal : 'Learn to enhance/update technical skills and earn while learning'};
+
+		//Usign keyword "new"
+		var myNewObject2 = new object();
+		myNewObject2.name = 'Aaditya Agrawal';
+		myNewObject2.designation = 'Sr Software Developer';
+		myNewObject2.goal = 'Learn to enhance/update technical skills and earn while learning';
+
+		//Using Object Constructor
+		function myNewObject3(name, designation, goal) {
+			this.name = name;
+			this.designation = designation;
+			this.goal = goal;
+		}
+		var myNewObject3 = new myNewObject3('Aaditya Agrawal', 'Sr Software Developer', 'Learn to enahance/update technical skills and earn while learning');
+
+		//using prototype way
+		myNewObject3.prototype.empcode = 'Cue307';
 
     </script>
 
