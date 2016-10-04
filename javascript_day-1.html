@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<p><h1>Practical Day 1</h1></p>
+
+	<p>
+		<h4>1. Write a program to create variables of the following types:
+			        int
+			        string
+			        boolean
+			        object
+			        array
+			    then add values in array(can be value of any type). Delete values from the array using array built in methods. 
+			    Toggle values of boolean variables
+			    Concatenate string with more values(without creating new string variables)
+    	</h4>
+    	<div>
+    		<h6>Variables</h6>
+    				<br>Interger : <span id="myIntVar"></span>
+		    		<br>String : <span id="myStringVar"></span>
+		    		<br>Boolean : <span id="myBoolVar"></span>
+		    		<br>Object : <span id="myObjVar"></span>
+		    		<br>Array : <span id="myArrayVar"></span><br>
+
+    	</div>
+    	<div>
+    		<button id="addValue" onclick="addArrayValue()">Add Value to Array</button><br>
+    		<button id="removeValue" onclick="removeArrayValue()">Delete Value from Array</button>
+    	</div>
+    	<div>
+    		<button id="toggleBoolValue" onclick="toggleBoolValue()">Toggle Value of Boolean</button>
+    	</div>
+    	<div>
+    		<button id="concatStrValue" onclick="concatStrValue()">Contact String with Value</button>
+    	</div>
+    </p>
+    
+    <script type="text/javascript">
+    	/*
+		1. Write a program to create variables of the following types:
+		        int
+		        string
+		        boolean
+		        object
+		        array
+		    then add values in array(can be value of any type). Delete values from the array using array built in methods. 
+		    Toggle values of boolean variables
+		    Concatenate string with more values(without creating new string variables)
+		*/
+
+		//create variables
+		var myIntVar = 123;
+		var myStringVar = 'Aaditya Agrawal';
+		var myBoolVar = true;
+		var myObjVar = { name : 'Aaditya Agrawal', designation : 'Sr Software Developer', goal : 'Learn to enhance/update technical skills and earn while learning'};
+		var myArrayVar = new Array('javascript', 'skills', 123);
+		//var myArrayVar = ['javascript', 'skills', 123];
+
+
+		document.getElementById("myIntVar").innerHTML = myIntVar;
+		document.getElementById("myStringVar").innerHTML = myStringVar;
+		document.getElementById("myBoolVar").innerHTML = myBoolVar;
+		document.getElementById("myObjVar").innerHTML = myObjVar.designation;
+		document.getElementById("myArrayVar").innerHTML = myArrayVar;
+
+		function addArrayValue() {
+			//add values in array
+			myArrayVar.push('push_value');
+			document.getElementById("myArrayVar").innerHTML = myArrayVar;
+		}
+		
+		function removeArrayValue() {
+			//remove value in array
+			myArrayVar.pop();
+			document.getElementById("myArrayVar").innerHTML = myArrayVar;
+		}
+
+		function toggleBoolValue() {
+			//toggle value of Bool vars
+			if(myBoolVar){
+				myBoolVar = false;
+			}else{
+				myBoolVar = true;
+			}
+			document.getElementById("myBoolVar").innerHTML = myBoolVar;
+		}
+
+		function concatStrValue() {
+			//cocatenate string with more value
+			myStringVar += '_Open Source Developer';
+			document.getElementById("myStringVar").innerHTML = myStringVar;
+		}	
+
+		//======================================================================================================
+
+    </script>
+
+	</body>
+</html>
+
