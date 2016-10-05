@@ -36,6 +36,10 @@ function arithmeticFunctionWithDynamicArgument(operationType) {
 
 	var validateResult = validateAruguments(args);
 
+	if(validateResult === false){
+		return false;
+	}
+
 	switch(operationType){
 		case 'Add':
 			var sum_result = args[1];
@@ -72,7 +76,6 @@ function arithmeticFunctionWithDynamicArgument(operationType) {
 }
 
 function validateAruguments(args) {
-	console.log(args);
 	for(var i=1; i < args.length; i++){
 		if(typeof args[i] !== 'number'){
 			alert('Invalid argument ' + args[i] + ' at position '+ (i));
@@ -80,4 +83,71 @@ function validateAruguments(args) {
 		}
 	}
 	return true;
+}
+
+/*
+2. Write a program that will do the following:
+    1. Create a student class and then create multiple student objects out of it.
+    2. Using a student object, add a method in the student class that will be then accessible from new objects created.
+*/
+
+class Student{
+	constructor(name, rank){
+		this.name = name;
+		this.rank = rank;
+	}
+	get student(){
+		return this.studentDetails();
+	}
+	studentDetails(){
+		return this.name + "\'s" + ' rank is ' + this.rank ;
+	}
+}
+var student1 = new Student('Aaditya', 1);
+var student2 = new Student('Tushar', 2);
+var student3 = new Student('Sneha', 3);
+console.log(student1.student, '===Student 1===');
+console.log(student2.student, '===Student 2===');
+console.log(student3.student, '===Student 3===');
+
+Student.prototype.NewMethod = function () {
+		console.log('NewMethod added');
+}
+
+console.log(student1.NewMethod(), '===NewMethod===');
+
+/*
+	3. Write a program that can make the use of 'reserved' keywords in JS without getting any error.
+*/
+
+var a = new Array();
+a["extends"]="extends"; 
+a['for']='for';
+console.log(a.extends, '===extends===', a.for,'===for===');
+
+
+/*
+	4. Write a program that will print number from 1 to 100 using all the variants of a loop structure(for,while,do while etc)
+*/
+
+//for loop
+function print1To100(){
+	console.log("============================FOR LOOP=========================");
+	for(var i=1; i<=100; i++){
+		console.log(i+'\n');
+	}
+
+	console.log("============================WHILE LOOP=========================");
+	var i=1;
+	while(i<=100){
+		console.log(i+'\n');
+		i++;
+	}
+
+	console.log("============================DO - WHILE LOOP=========================");
+	var i=1;
+	do{
+		console.log(i+'\n');
+		i++;
+	}while(i<=100);
 }
