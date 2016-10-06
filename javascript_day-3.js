@@ -105,4 +105,36 @@ for(var i=1; i <= 100; i++){
 	myArray.push(i);
 }
 console.log(myArray);
+//======================================================
+function printArrayWithoutLoop(varArr, arrayLength, index){
+	if(index === undefined){
+	  	index = 0;
+	}
+  
+	if(index < arrayLength){
+		if(varArr[index] != undefined){
+			console.log(varArr[index]);
+		}
+		printArrayWithoutLoop(varArr, varArr.length, (index+1) );
+	}
+}
 
+function printArrayReverseWithoutLoop(varArr, index){
+	index = index-1;
+	if(index >= 0){
+		console.log(varArr[index]);
+		printArrayReverseWithoutLoop(varArr, index);
+	}
+}
+
+function printArray(arrayVar, printOrder){
+	if(printOrder == 'reverse'){
+		printArrayReverseWithoutLoop(arrayVar, arrayVar.length);
+	}else{
+		printArrayWithoutLoop(arrayVar, arrayVar.length);
+	}
+}
+
+printArray(myArray);
+printArray(myArray, 'reverse');
+//=================================================================
