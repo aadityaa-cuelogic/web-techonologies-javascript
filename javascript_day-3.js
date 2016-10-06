@@ -92,7 +92,32 @@ function unixTimestampToUTC(unixTimestamp) {
     ]
     the  length of array can be dynamic and contain as many values as possible
 */
-
+var dimensionalArray = ['00','01','11','10','11','00'];
+function oneToTwoDimentionalArray(arrayOneD, newArray){
+	if(arrayOneD.length > 0){
+		var arrayValue = arrayOneD.shift();
+		var temp_array = arrayValue.split('').map(Number);
+		if(!Array.isArray(newArray)){
+			newArray = temp_array;
+		}else{
+			newArray = newArray.concat(temp_array);
+		}
+		return oneToTwoDimentionalArray(arrayOneD, newArray);
+	}else{
+  	var array1 = [];
+    var array2 = [];
+  	for (var i = 0; i < newArray.length; ++i) { 
+        if ((i % 2) === 0) {
+            array1.push(newArray[i]);
+        }else{
+        		array2.push(newArray[i]);
+        }
+    }
+  	newArray = [array1, array2];
+  	return newArray;
+  }
+}
+console.log(oneToTwoDimentionalArray(dimensionalArray));
 
 /*
 	6. Write a program to do the following:
@@ -106,7 +131,9 @@ for(var i=1; i <= 100; i++){
 }
 console.log(myArray);
 //======================================================
+
 function printArrayWithoutLoop(varArr, arrayLength, index){
+	//solution type 1
 	if(index === undefined){
 	  	index = 0;
 	}
@@ -117,6 +144,10 @@ function printArrayWithoutLoop(varArr, arrayLength, index){
 		}
 		printArrayWithoutLoop(varArr, varArr.length, (index+1) );
 	}
+	//solution type 2
+	//var arrayValue = varArr.splice(0,1);
+	//console.log(arrayValue);
+
 }
 
 function printArrayReverseWithoutLoop(varArr, index){
@@ -137,4 +168,6 @@ function printArray(arrayVar, printOrder){
 
 printArray(myArray);
 printArray(myArray, 'reverse');
+
+
 //=================================================================
