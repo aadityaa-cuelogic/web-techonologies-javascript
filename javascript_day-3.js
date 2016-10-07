@@ -92,7 +92,7 @@ function unixTimestampToUTC(unixTimestamp) {
     ]
     the  length of array can be dynamic and contain as many values as possible
 */
-var dimensionalArray = ['00','01','11','10','11','00'];
+var dimensionalArray = ['00','01','11','10','11','00', '23'];
 function oneToTwoDimentionalArray(arrayOneD, newArray){
 	if(arrayOneD.length > 0){
 		var arrayValue = arrayOneD.shift();
